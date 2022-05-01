@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>原子轨道 - shenyouran&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="shenyouran&#039;s Blog"><meta name="msapplication-TileImage" content="pic/icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="shenyouran&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="原子轨道的定义：  原子轨道是特定能量的电子在核外空间出现最多的区域。  计算原子在某一位置出现概率的方法： $$\Psi(r,\theta,\varphi)&amp;#x3D;R(r) \cdot \Theta(\theta) \cdot \Phi(\varphi)$$ 这三个参数被称为量子数。不同的原子、不同的位置都有不同的量子数。  $R(r)$：主量子数 $n$ ——物理含义是距离核的距离 $\Theta("><meta property="og:type" content="blog"><meta property="og:title" content="原子轨道"><meta property="og:url" content="https://shenyouran.github.io/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/arbital/"><meta property="og:site_name" content="shenyouran&#039;s Blog"><meta property="og:description" content="原子轨道的定义：  原子轨道是特定能量的电子在核外空间出现最多的区域。  计算原子在某一位置出现概率的方法： $$\Psi(r,\theta,\varphi)&amp;#x3D;R(r) \cdot \Theta(\theta) \cdot \Phi(\varphi)$$ 这三个参数被称为量子数。不同的原子、不同的位置都有不同的量子数。  $R(r)$：主量子数 $n$ ——物理含义是距离核的距离 $\Theta("><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://shenyouran.github.io/img/og_image.png"><meta property="article:published_time" content="2022-02-27T08:11:01.000Z"><meta property="article:modified_time" content="2022-03-02T15:07:44.876Z"><meta property="article:author" content="shenyouran"><meta property="article:tag" content="原子的构造原理"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shenyouran.github.io/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/arbital/"},"headline":"shenyouran's Blog","image":["https://shenyouran.github.io/img/og_image.png"],"datePublished":"2022-02-27T08:11:01.000Z","dateModified":"2022-03-02T15:07:44.876Z","author":{"@type":"Person","name":"shenyouran"},"description":"原子轨道的定义：  原子轨道是特定能量的电子在核外空间出现最多的区域。  计算原子在某一位置出现概率的方法： $$\\Psi(r,\\theta,\\varphi)&#x3D;R(r) \\cdot \\Theta(\\theta) \\cdot \\Phi(\\varphi)$$ 这三个参数被称为量子数。不同的原子、不同的位置都有不同的量子数。  $R(r)$：主量子数 $n$ ——物理含义是距离核的距离 $\\Theta("}</script><link rel="canonical" href="https://shenyouran.github.io/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/arbital/"><link rel="icon" href="/pic/icon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.2"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/pic/icon.png" alt="shenyouran&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/code">代码</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/shenyouran"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="My Luogu" href="https://www.luogu.com.cn/user/137367"><i class="/pic/luogu.ico"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-27T08:11:01.000Z" title="2022/2/27 16:11:01">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-03-02T15:07:44.876Z" title="2022/3/2 23:07:44">2022-03-02</time>更新</span><span class="level-item">4 分钟读完 (大约543个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">原子轨道</h1><div class="content"><p>原子轨道的定义：</p>
+<blockquote>
+<p>原子轨道是特定能量的电子在核外空间出现<strong>最多</strong>的区域。</p>
+</blockquote>
+<p>计算原子在某一位置出现概率的方法：</p>
+<p>$$\Psi(r,\theta,\varphi)=R(r) \cdot \Theta(\theta) \cdot \Phi(\varphi)$$</p>
+<p>这三个参数被称为<strong>量子数</strong>。不同的原子、不同的位置都有不同的量子数。</p>
+<ul>
+<li>$R(r)$：主量子数 $n$ ——物理含义是距离核的距离</li>
+<li>$\Theta(\theta)$：角量子数 $l$ ——物理含义是不同位置的角动量</li>
+<li>$\Theta(\theta) \cdot \Phi(\varphi)$：磁通量 $m$ ——不同伸展方向在磁场中发生分化</li>
+</ul>
+<h2 id="1-主量子数-n-（能层）"><a href="#1-主量子数-n-（能层）" class="headerlink" title="1 主量子数 $n$（能层）"></a>1 主量子数 $n$（能层）</h2><ul>
+<li>主量子数用于确定电子出现几率最大处距离核的距离。</li>
+<li>不同的 $n$ 值对应不同的电子壳层（电子层）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">K</td>
+<td align="center">L</td>
+<td align="center">M</td>
+<td align="center">N</td>
+<td align="center">O</td>
+</tr>
+</tbody></table>
+<h2 id="2-角量子数-m-（能级）"><a href="#2-角量子数-m-（能级）" class="headerlink" title="2 角量子数 $m$（能级）"></a>2 角量子数 $m$（能级）</h2><ul>
+<li>角量子数决定了函数的形状。</li>
+<li>$l$ 的取值为 $[0,n) \cap \mathbf Z$，可以理解为表示电子层内部的亚层结构。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">s</td>
+<td align="center">p</td>
+<td align="center">d</td>
+<td align="center">f</td>
+<td align="center">g</td>
+</tr>
+</tbody></table>
+<h2 id="3-磁量子数-l"><a href="#3-磁量子数-l" class="headerlink" title="3 磁量子数 $l$"></a>3 磁量子数 $l$</h2><ul>
+<li>磁量子数用于确定轨道取向。</li>
+<li>$m$ 的取值为 $0,\pm 1,\pm 3,\cdots,\pm(2l-1)$。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">l</th>
+<th align="center">m</th>
+<th align="center">轨道数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$0(\text s)$</td>
+<td align="center">$0$</td>
+<td align="center">$1$</td>
+</tr>
+<tr>
+<td align="center">$1(\text p)$</td>
+<td align="center">$0,\pm 1$</td>
+<td align="center">$3$</td>
+</tr>
+<tr>
+<td align="center">$2(\text d)$</td>
+<td align="center">$0,\pm 1,\pm 3$</td>
+<td align="center">$5$</td>
+</tr>
+<tr>
+<td align="center">$3(\text f)$</td>
+<td align="center">$0,\pm 1,\pm 3,\pm 5$</td>
+<td align="center">$7$</td>
+</tr>
+</tbody></table>
+<h2 id="4-自旋量子数-m-s"><a href="#4-自旋量子数-m-s" class="headerlink" title="4 自旋量子数 $m_s$"></a>4 自旋量子数 $m_s$</h2><p>自旋量子数用于描述电子的旋转方向，取值为 $\pm \frac{1}{2}$。</p>
+<hr>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li>写出与轨道量子数相符的轨道名称：</li>
+</ol>
+<ul>
+<li>$n=3,l=2,m=1$</li>
+<li>$n=4,l=2,m=0$</li>
+<li>$n=1,l=0,m=0$</li>
+<li>$n=2,l=1,m=-1$</li>
+</ul>
+<p>解：</p>
+<ul>
+<li>$l=2$ 对应 $\text d$，为 $3 \text d$。</li>
+<li>$l=2$ 对应 $\text d$，为 $4 \text d$。</li>
+<li>$l=0$ 对应 $\text s$，为 $1 \text s$。</li>
+<li>$l=1$ 对应 $\text p$，为 $2 \text p$。</li>
+</ul>
+<ol start="2">
+<li>判断哪些原子轨道不存在：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$3 \text d$</td>
+<td align="center">$5 \text f$</td>
+<td align="center">$4 \text s$</td>
+</tr>
+<tr>
+<td align="center">$2 \text g$</td>
+<td align="center">$7 \text s$</td>
+<td align="center">$2 \text d$</td>
+</tr>
+</tbody></table>
+<p>解：$\text d,\text f,\text s,\text g,\text s,\text d$ 分别对应 $2,3,0,4,0,2$。由于 $4 \ge 2$ 且 $2 \ge 2$，因此 $2 \text g$ 和 $2 \text d$ 不存在。</p>
+<hr>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>$\text H$ 原子有 $2 \text s$ 轨道吗？</p>
+<p>答：有，因为任何一个原子都可以拥有无数个轨道（只要合法），但只有有限个轨道上有电子。</p>
+<hr>
+</div><div class="article-licensing box"><div class="licensing-title"><p>原子轨道</p><p><a href="https://shenyouran.github.io/chemistry/1原子的构造原理/arbital/">https://shenyouran.github.io/chemistry/1原子的构造原理/arbital/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>shenyouran</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-27</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-03-02</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a class="icon" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a><a class="icon" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/">原子的构造原理</a></div><!--!--></article></div><!--!--><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread' ,
+            appId: "EW1yQbV1WS3IL2aSdwpLtRzm-MdYXbMMI",
+            appKey: "9iKsEk411K8XD4hEC1kwxsbF",
+            
+            avatar: "mm",
+            
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            
+            highlight: true,
+            
+            
+            
+            
+            
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/pic/icon.png" alt="shenyouran"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">shenyouran</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">3</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">1</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/shenyouran" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/shenyouran"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://www.luogu.com.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Luogu</span></span><span class="level-right"><span class="level-item tag">www.luogu.com.cn</span></span></a></li><li><a class="level is-mobile" href="https://codeforces.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Codeforces</span></span><span class="level-right"><span class="level-item tag">codeforces.com</span></span></a></li><li><a class="level is-mobile" href="http://loj.ac/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">LibreOJ</span></span><span class="level-right"><span class="level-item tag">loj.ac</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-30T16:00:00.000Z">2022-05-01</time></p><p class="title"><a href="/navigator/">Blog Navigator</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-02T14:54:16.000Z">2022-03-02</time></p><p class="title"><a href="/chemistry/navigator/">化学笔记</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2021-11-30T16:00:00.000Z">2021-12-01</time></p><p class="title"><a href="/OI/OI2021/">OI 2021</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/OI/"><span class="tag">OI</span><span class="tag">1</span></a></div></div></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/pic/icon.png" alt="shenyouran&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 shenyouran</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
