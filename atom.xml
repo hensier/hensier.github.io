@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>shenyouran&#39;s Blog</title>
+  <icon>https://shenyouran.github.io/icon.png</icon>
+  
+  <link href="https://shenyouran.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://shenyouran.github.io/"/>
+  <updated>2022-05-01T15:23:56.002Z</updated>
+  <id>https://shenyouran.github.io/</id>
+  
+  <author>
+    <name>shenyouran</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Blog Navigator</title>
+    <link href="https://shenyouran.github.io/navigator/"/>
+    <id>https://shenyouran.github.io/navigator/</id>
+    <published>2022-04-30T16:00:00.000Z</published>
+    <updated>2022-05-01T15:23:56.002Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;信息竞赛&quot;&gt;&lt;a href=&quot;#信息竞赛&quot; class=&quot;headerlink&quot; title=&quot; 信息竞赛&quot;&gt;&lt;/a&gt;&lt;img src=&quot;/OI.png&quot;&gt; 信息竞赛&lt;/h2&gt;&lt;h3 id=&quot;题解区&quot;&gt;&lt;a href=&quot;#题解区&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
