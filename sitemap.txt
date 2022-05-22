@@ -1,3 +1,4 @@
+https://shenyouran.github.io/projecteuler/52/
 https://shenyouran.github.io/navigator/
 https://shenyouran.github.io/projecteuler/euler/
 https://shenyouran.github.io/projecteuler/report/
