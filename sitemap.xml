@@ -2,7 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://shenyouran.github.io/projecteuler/52/</loc>
+    <loc>https://shenyouran.github.io/projecteuler/report/</loc>
+    
+    <lastmod>2022-05-22</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://shenyouran.github.io/projecteuler/euler/</loc>
     
     <lastmod>2022-05-22</lastmod>
     
@@ -13,25 +22,16 @@
   <url>
     <loc>https://shenyouran.github.io/navigator/</loc>
     
-    <lastmod>2022-05-08</lastmod>
+    <lastmod>2022-05-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://shenyouran.github.io/projecteuler/euler/</loc>
+    <loc>https://shenyouran.github.io/projecteuler/52/</loc>
     
-    <lastmod>2022-05-08</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://shenyouran.github.io/projecteuler/report/</loc>
-    
-    <lastmod>2022-05-08</lastmod>
+    <lastmod>2022-05-22</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
