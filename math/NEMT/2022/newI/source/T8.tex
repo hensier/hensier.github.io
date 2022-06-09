@@ -1,0 +1,50 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\noindent 已知正四棱锥的侧棱长为 $l$，其各顶点都再同一球面上，若该球的体积为 $36 \pi$，且 $3 \le l \le 3 \sqrt 3$，则该正四棱锥体积的取值范围是
+
+\noindent A. $[18,\frac{81}{4}]$ \,
+B. $[\frac{27}{4},\frac{81}{4}]$ \,
+C. $[\frac{27}{4},\frac{64}{3}]$ \,
+D. $[18,27]$ \\
+
+\noindent 解：设四棱锥底面边长为 $\sqrt 2a$，则
+
+$$(3+\sqrt{9-a^2})^2+a^2=l^2$$
+
+\noindent 化简得
+
+$$a^2=\frac{36l^2-l^4}{36}$$
+
+\noindent 设 $t=l^2$，棱锥体积为 $V(t)$，则
+
+\begin{align*}
+V(t) &= 2a^2+\frac{2a^2}{3} \times \sqrt{9-a^2} \\
+&= \frac{t^2}{324}(36-t) \qquad  \qquad (t \in [9,27])
+\end{align*}
+
+\noindent 对上式求导得
+
+\begin{align*}
+V'(t) &= \frac{1}{324} \times [2t \times (36-t)-t^2] \\ 
+&= \frac{24t-t^2}{108}
+\end{align*}
+
+\noindent 设能让 $V(t)$ 取极值的自变量为 $t_0$，则
+
+$$24t_0-t_0^2=0 \Rightarrow t_0=0 \text{（舍）或 } t_0=24$$
+
+\noindent 由此可知 $V(t)$ 在 $(9,24)$ 上为增函数，在 $(24,27)$ 上为减函数.
+
+\noindent 因而
+
+$$V_{\max}=V(24)=\frac{24^2}{324}(36-24)=\frac{64}{3}$$
+
+$$V_{\min}=\min\{V(9),V(27)\}=\min\{\frac{9^2}{324}(36-9),\frac{27^2}{324}(36-27)\}=\frac{27}{4}$$
+
+\noindent 故选 C.
+
+\end{document}
