@@ -1,0 +1,53 @@
+\documentclass[UTF8]{ctexart}
+\usepackage{amsmath}
+\newcommand{\lt}{<}
+\newcommand{\gt}{>}
+\begin{document}
+\thispagestyle{empty}
+\pagestyle{empty}
+
+\noindent 设 $a=0.1e^{0.1}$，$b=\dfrac{1}{9}$，$c=-\ln 0.9$，则
+
+\noindent A. $a \lt b \lt c$ \,
+B. $c \lt b \lt a$ \,
+C. $c \lt a \lt b$ \,
+D. $a \lt c \lt b$ \\
+
+\noindent 解：本题使用泰勒公式更加方便：
+
+$$f(x)=\sum_{i=0}^{+\infty} \dfrac{f^{(i)}(x_0)}{i!} (x-x_0)^i$$
+
+\noindent 对于函数 $a(x)=e^x$，可在 $x_0=0$ 处进行展开：
+
+\begin{align*}
+a(x) &= \sum_{i=0}^{+\infty} \dfrac{a^{(i)}(0)}{i!} x^i \\
+&= 1+x+\dfrac{x^2}{2}+\dfrac{x^3}{6}+
+\dfrac{x^4}{24}+\cdots
+\end{align*}
+
+\noindent 不妨计算到 $2$ 次方项：
+
+$$a(0.1) \approx 1+10^{-1}+5 \times 10^{-3} \approx 1.105$$
+
+\noindent 因此 $a \approx 0.1105$.
+
+\noindent 对于 $b$，显然有 $b=0.\dot 1$.
+
+\noindent 由于 $\ln x$ 在 $x_0=0$ 处无意义，因此不妨对函数 $c(x)=\ln (1-x)$ 在 $x_0=0$ 处进行展开：
+
+\begin{align*}
+c(x) &= \sum_{i=1}^{+\infty} (-\dfrac{x^i}{i}) \\
+&= -(x+\dfrac{x^2}{2}+\dfrac{x^3}{3}+\cdots)
+\end{align*}
+
+\noindent 不妨计算到 $2$ 次方项：
+
+$$c(0.1) \approx -(10^{-1}+5 \times 10^{-3})=-0.105$$
+
+\noindent 因此 $c \approx 0.105$.
+
+\noindent 整理得 $a \approx 0.1105$，$b \approx 0.1111$，$c \approx 0.105$.
+
+\noindent 故 $c \lt a \lt b$，选 C.
+
+\end{document}
