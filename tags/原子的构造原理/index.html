@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: 原子的构造原理 - shenyouran&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="shenyouran&#039;s Blog"><meta name="msapplication-TileImage" content="pic/icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="shenyouran&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta property="og:type" content="blog"><meta property="og:title" content="shenyouran&#039;s Blog"><meta property="og:url" content="https://shenyouran.github.io/"><meta property="og:site_name" content="shenyouran&#039;s Blog"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://shenyouran.github.io/img/og_image.png"><meta property="article:author" content="shenyouran"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://shenyouran.github.io"},"headline":"shenyouran's Blog","image":["https://shenyouran.github.io/img/og_image.png"],"author":{"@type":"Person","name":"shenyouran"},"description":""}</script><link rel="icon" href="/pic/icon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><meta name="msvalidate.01" content="75D9FC08E262722930FC5A05E693A65B"><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="shenyouran's Blog" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/pic/icon.png" alt="shenyouran&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/shenyouran"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="My Luogu" href="https://www.luogu.com.cn/user/137367"><i class="/pic/luogu.ico"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">原子的构造原理</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-03T15:05:59.000Z" title="2022/3/3 23:05:59">2022-03-03</time>发表</span><span class="level-item"><time dateTime="2022-10-01T14:30:26.362Z" title="2022/10/1 22:30:26">2022-10-01</time>更新</span><span class="level-item">6 分钟读完 (大约872个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/solution/">原子的构造原理 题解</a></h1><div class="content"><h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习 1"></a>练习 1</h2><p>A. 和电子层相关联的是能层而不是能级，A 错误。</p>
+<p>B. 每个能层有轨道 $0 \sim n-1$，因此可容纳的总电子数为 $2 \sum_{i&#x3D;0}^{n-1} (2i+1)&#x3D;2(n^2-n+n)&#x3D;2n^2$，B 正确。</p>
+<p>C. 在不考虑能级交错的情况下，不同能层按能层从小到大的顺序能量从低到高，相同能层按能级从小到大的顺序能量从低到高。而能级交错只是对部分能级的交换，但本身能量没有改变，因此同一能层的不同能级能量不可能相同。C 错误。</p>
+<p>D. 与 C 类似，能层不同时层数越大，能量越大。D 错误。</p>
+<h2 id="练习-2"><a href="#练习-2" class="headerlink" title="练习 2"></a>练习 2</h2><p>$\text O$ 的电子排布为 $1 \text s^2 2 \text s^2 2 \text p^4$。形成阴离子时可直接追加电子，因此 $\text O^{2-}$ 的电子排布为 $1 \text s^2 2 \text s^2 2 \text p^6$，故 B 错误。</p>
+<h2 id="练习-3"><a href="#练习-3" class="headerlink" title="练习 3"></a>练习 3</h2><p>最外层电子排布可以反映最外层电子数，从而体现元素的化合价。而 $\text X_2 \text Y_3$ 这一形式也表明 $\text X$ 化合价为正，$\text Y$ 为负。</p>
+<p>A. $\text X$ 和 $\text Y$ 的最外层电子数分别为 $2+1&#x3D;3$ 和 $2+5&#x3D;7$。因此 $\text X,\text Y$ 化合价分别为 $+3,-1$，不合题意。</p>
+<p>B. $\text X$ 和 $\text Y$ 的最外层电子数分别为 $2+3&#x3D;5$ 和 $2+4&#x3D;6$。因此 $\text X,\text Y$ 化合价分别为 $+5,-2$，不合题意。</p>
+<p>C. $\text X$ 和 $\text Y$ 的最外层电子数分别为 $2+1&#x3D;3$ 和 $2+4&#x3D;6$。因此 $\text X,\text Y$ 化合价分别为 $+3,-2$，符合题意。</p>
+<p>D. $\text X$ 和 $\text Y$ 的最外层电子数分别为 $2$ 和 $2+3&#x3D;5$。因此 $\text X,\text Y$ 化合价分别为 $+2,-3$，不合题意。</p>
+<h2 id="练习-4"><a href="#练习-4" class="headerlink" title="练习 4"></a>练习 4</h2><p>C 中 $2 \text p$ 没有排满，而该元素又不是 $\text{Cr}$ 和 $\text{Cu}$ 的特例，因此 C 不符合题意。</p>
+<h2 id="练习-5"><a href="#练习-5" class="headerlink" title="练习 5"></a>练习 5</h2><p>$3 \text d$ 轨道上排满后应该有 $6$ 个电子，而现在只有 $5$ 个电子。因此只可能有两种情况：</p>
+<ul>
+<li>某一元素排到 $3 \text d$ 前只差 $5$ 个电子就可以排完。因此该元素电子数为 $2+2+6+2+6+2+5&#x3D;25$，即为 $_{25}\text{Mn}$。</li>
+<li>该元素符合洪特规则补充条例，即为 $_{24}\text{Cr}$。</li>
+</ul>
+<p>$\text{Mn}$ 和 $\text{Cr}$ 的排布式分别为 $3 \text d^5 4 \text s^2$ 和 $3 \text s^2 3 \text p^6 3 \text d^5$，因此 D 符合题意。</p>
+<h2 id="练习-6"><a href="#练习-6" class="headerlink" title="练习 6"></a>练习 6</h2><p>A. 同一名称的能级所含轨道数相同，差别只在于能量大小，A 错误。</p>
+<p>B. 这一过程部分电子从外侧转移到内侧，因此释放能量，B 正确。</p>
+<p>C. $3 \text p^2$ 表示 $3 \text p$ 能级上有两个电子，C 错误。</p>
+<p>D. 不可能存在两个主量子数、角量子数、磁量子数和自旋量子数都对应相等的电子。因此不可能存在运动状态相同的电子，D 错误。</p>
+<h2 id="任务"><a href="#任务" class="headerlink" title="任务"></a>任务</h2><p>当不考虑能级交错时，这一世界的排布规律如下：</p>
+<p><img src="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/solution/new_system.png"></p>
+<p>注意到磁量子数为 $\pm l$，因此只有当角量子数为 $0$ 时每个轨道可容纳 $1$ 个电子，其它情况均可容纳 $2$ 个电子。</p>
+<p>题目询问的是第三个稀有气体，因此该元素应该正好排满了前三能层的所有轨道。</p>
+<p>因此电子数为 $1+2+1+2+2+1+2+2+2&#x3D;15$，即对应第 $15$ 号元素。</p>
+<!-- flag of hidden posts --></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-03-02T15:24:06.000Z" title="2022/3/2 23:24:06">2022-03-02</time>发表</span><span class="level-item"><time dateTime="2022-03-03T15:50:42.318Z" title="2022/3/3 23:50:42">2022-03-03</time>更新</span><span class="level-item">4 分钟读完 (大约642个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/task/">原子的构造原理 练习与小结</a></h1><div class="content"><h2 id="练习-1"><a href="#练习-1" class="headerlink" title="练习 1"></a>练习 1</h2><p>下列叙述正确的是</p>
+<p>A. 能级就是电子层</p>
+<p>B. 每个能层最多可容纳的电子数是 $2n^2$</p>
+<p>C. 同一能层中的不同能级的能量高低相同</p>
+<p>D. 不同能层中 $\text s$ 能级的能量高低相同</p>
+<h2 id="练习-2"><a href="#练习-2" class="headerlink" title="练习 2"></a>练习 2</h2><p>主族元素原子失去最外层电子形成阳离子，主族元素的原子得到电子填充在最外层形成阴离子。下列各原子或离子的电子排布式错误的是</p>
+<p>A. $\text{Ca}^{2+}: 1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6$</p>
+<p>B. $\text O^{2-}: 1 \text s^2 2 \text s^2 2 \text p^4$</p>
+<p>C. $\text{Cl}^-: 1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6$</p>
+<p>D. $\text{Ar}: 1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6$</p>
+<h2 id="练习-3"><a href="#练习-3" class="headerlink" title="练习 3"></a>练习 3</h2><p>$\text X,\text Y$ 两元素可形成 $\text X_2 \text Y_3$ 型化合物，则 $\text X,\text Y$ 原子最外层的电子排布可能是</p>
+<p>A. $\text X: 3 \text s^2 3 \text p^1$ $\text Y: 3 \text s^2 3 \text p^5$</p>
+<p>B. $\text X: 2 \text s^2 2 \text p^3$ $\text Y: 2 \text s^2 2 \text p^4$</p>
+<p>C. $\text X: 3 \text s^2 3 \text p^1$ $\text Y: 3 \text s^2 3 \text p^4$</p>
+<p>D. $\text X: 3 \text s^2$ $\text Y: 2 \text s^2 2 \text p^3$</p>
+<h2 id="练习-4"><a href="#练习-4" class="headerlink" title="练习 4"></a>练习 4</h2><p>下列原子或离子核外电子排布不属于基态分布的是</p>
+<p>A. $\text N: 1 \text s^2 2 \text s^2 2 \text p^3$</p>
+<p>B. $\text S^{2-}: 1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6$</p>
+<p>C. $\text{Na}: 1 \text s^2 2 \text s^2 2 \text p^5 3 \text s^2$</p>
+<p>D. $\text{Si}: 1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^2$</p>
+<h2 id="练习-5"><a href="#练习-5" class="headerlink" title="练习 5"></a>练习 5</h2><p>某元素基态原子 $3 \text d$ 轨道上有 $5$ 个电子，则该原子最外层电子的排布可能是</p>
+<p>A. $4 \text s^1$</p>
+<p>B. $4 \text s^2 4 \text p^1$</p>
+<p>C. $4 \text s^2 4 \text p^3$</p>
+<p>D. $3 \text s^2 3 \text p^6 3 \text d^5$</p>
+<h2 id="练习-6"><a href="#练习-6" class="headerlink" title="练习 6"></a>练习 6</h2><p>以下对核外电子运动状况的描述正确的是</p>
+<p>A. 同一原子中，$2 \text p$、$3 \text p$、$4 \text p$ 能级的轨道依次增多</p>
+<p>B. 当碳原子的核外电子排布由 $|\uparrow \downarrow|\uparrow|\uparrow|\uparrow|\uparrow|$ 转化为 $|\uparrow \downarrow|\uparrow \downarrow|\uparrow|\uparrow||$ 时，这一过程释放能量</p>
+<p>C. $3 \text p^2$ 表示 $3 \text p$ 能级有两个轨道</p>
+<p>D. 在同一能级上运动的电子，其运动状态可能相同</p>
+<h2 id="章节任务"><a href="#章节任务" class="headerlink" title="章节任务"></a>章节任务</h2><ul>
+<li>高考：熟练 $1 \sim 18$ 号元素的核外电子排布式和排布图，会写前 $36$ 号元素的排布式和排布图</li>
+<li>进阶：熟练四个量子数的制约关系，能记住 $\text{spd}$ 的电子云形状</li>
+<li>竞赛：若一个世界主量子数 $n&#x3D;1,2,3,4,\dots$，角量子数 $l&#x3D;0,1,2,3,\dots,n$，磁量子数 $m&#x3D;\pm l$，自旋量子数 $m_s$ 只有 $+\frac{1}{2}$，且不考虑能级交错，则第三个稀有气体是几号元素？</li>
+</ul>
+<!-- flag of hidden posts --></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-27T08:43:07.000Z" title="2022/2/27 16:43:07">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-10-01T14:28:10.736Z" title="2022/10/1 22:28:10">2022-10-01</time>更新</span><span class="level-item">4 分钟读完 (大约573个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/overlap/">能级交错</a></h1><div class="content"><p>在电子需要进入原子轨道时，按照一定的规律进行填入：</p>
+<p><img src="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/overlap/overlap.png"></p>
+<p>可以想象有一个与坐标轴正半轴夹角为 $135^\circ$ 的直线，每次先从右下到左上读出所有元素，然后右移动 $1$ 格，重复操作即可得到所有排布的顺序：</p>
+<p><img src="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/overlap/overlap.gif"></p>
+<hr>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li>$\text{Fe}$ 原子的电子排布</li>
+</ol>
+<p>解：$\text{Fe}$ 为 $26$ 号元素，因此有 $26$ 个核外电子。不妨先把前面的轨道列出：</p>
+<p>$$1 \text s,2 \text s,2 \text p,3 \text s,3 \text p,4 \text s,3 \text d,4 \text p,5 \text s$$</p>
+<p>前六个轨道可容纳 $2(1+1+3+1+3+1)&#x3D;20$ 个电子，而最后 $6$ 个电子可以直接排列在下一个轨道 $3 \text d$ 中（$6 \ge 10$）。</p>
+<p>因而电子排布为</p>
+<p>$$1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6 4 \text s^2 3 \text d^6$$</p>
+<ol start="2">
+<li>$\text{Br}$ 原子的电子排布</li>
+</ol>
+<p>解：$\text{Br}$ 为 $35$ 号元素，因此有 $35$ 个核外电子。因而电子排布为</p>
+<p>$$1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6 4 \text s^2 3 \text d^{10} 4 \text p^5$$</p>
+<hr>
+<p>注意到我们可以列出稀有气体的电子排布式（按照轨道顺序排列）：</p>
+<p>$\text{He}$ $1 \text s^2$</p>
+<p>$\text{Ne}$ $1 \text s^2 2 \text s^2 2 \text p^6$</p>
+<p>$\text{Ar}$ $1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6$</p>
+<p>$\text{Kr}$ $1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6 3 \text d^{10} 4 \text s^2 4 \text p^6$</p>
+<p>$\text{Xe}$ $1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6 3 \text d^{10} 4 \text s^2 4 \text p^6 4 \text d^{10} 5 \text s^2 5 \text p^6$</p>
+<p>这些稀有气体除了 $\text{He}$ 以外，都以 $n \text p^6$ 结尾，因此可以用来简化电子的排布：</p>
+<p>$\text{Fe}$ $1 \text s^2 2 \text s^2 2 \text p^6 3 \text s^2 3 \text p^6 4 \text s^2 3 \text d^6 \to [\text{Ar}]3 \text d^6 4 \text s^2$</p>
+<p>对于阳离子，应当先写出对应离子的排布，再<strong>按从外到内的顺序</strong>进行丢失：</p>
+<p>$\text{Fe}$ $[\text{Ar}]3 \text d^6 4 \text s^2 \to \text{Fe}^{3+}$ $[\text{Ar}]3 \text d^5$</p>
+<hr>
+<h2 id="洪特规则补充条例"><a href="#洪特规则补充条例" class="headerlink" title="洪特规则补充条例"></a>洪特规则补充条例</h2><p>在能量相同的轨道中电子全部充满、半充满和全空时相对较稳定。</p>
+<p>因此需要补充下面两个特例：</p>
+<p>$_{24}\text{Cr}$ 按之前为 $[\text{Ar}]3 \text d^4 4 \text s^2$，但实为 $[\text{Ar}]3 \text d^5 4 \text s^1$。</p>
+<p>$_{29}\text{Cu}$ 按之前为 $[\text{Ar}]3 \text d^9 4 \text s^2$，但实为 $[\text{Ar}]3 \text d^{10} 4 \text s^1$。</p>
+<!-- flag of hidden posts --></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-27T08:11:01.000Z" title="2022/2/27 16:11:01">2022-02-27</time>发表</span><span class="level-item"><time dateTime="2022-03-02T15:07:44.876Z" title="2022/3/2 23:07:44">2022-03-02</time>更新</span><span class="level-item">4 分钟读完 (大约543个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/arbital/">原子轨道</a></h1><div class="content"><p>原子轨道的定义：</p>
+<blockquote>
+<p>原子轨道是特定能量的电子在核外空间出现<strong>最多</strong>的区域。</p>
+</blockquote>
+<p>计算原子在某一位置出现概率的方法：</p>
+<p>$$\Psi(r,\theta,\varphi)&#x3D;R(r) \cdot \Theta(\theta) \cdot \Phi(\varphi)$$</p>
+<p>这三个参数被称为<strong>量子数</strong>。不同的原子、不同的位置都有不同的量子数。</p>
+<ul>
+<li>$R(r)$：主量子数 $n$ ——物理含义是距离核的距离</li>
+<li>$\Theta(\theta)$：角量子数 $l$ ——物理含义是不同位置的角动量</li>
+<li>$\Theta(\theta) \cdot \Phi(\varphi)$：磁通量 $m$ ——不同伸展方向在磁场中发生分化</li>
+</ul>
+<h2 id="1-主量子数-n-（能层）"><a href="#1-主量子数-n-（能层）" class="headerlink" title="1 主量子数 $n$（能层）"></a>1 主量子数 $n$（能层）</h2><ul>
+<li>主量子数用于确定电子出现几率最大处距离核的距离。</li>
+<li>不同的 $n$ 值对应不同的电子壳层（电子层）。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+<th align="center">5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">K</td>
+<td align="center">L</td>
+<td align="center">M</td>
+<td align="center">N</td>
+<td align="center">O</td>
+</tr>
+</tbody></table>
+<h2 id="2-角量子数-m-（能级）"><a href="#2-角量子数-m-（能级）" class="headerlink" title="2 角量子数 $m$（能级）"></a>2 角量子数 $m$（能级）</h2><ul>
+<li>角量子数决定了函数的形状。</li>
+<li>$l$ 的取值为 $[0,n) \cap \mathbf Z$，可以理解为表示电子层内部的亚层结构。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">0</th>
+<th align="center">1</th>
+<th align="center">2</th>
+<th align="center">3</th>
+<th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">s</td>
+<td align="center">p</td>
+<td align="center">d</td>
+<td align="center">f</td>
+<td align="center">g</td>
+</tr>
+</tbody></table>
+<h2 id="3-磁量子数-l"><a href="#3-磁量子数-l" class="headerlink" title="3 磁量子数 $l$"></a>3 磁量子数 $l$</h2><ul>
+<li>磁量子数用于确定轨道取向。</li>
+<li>$m$ 的取值为 $0,\pm 1,\pm 3,\cdots,\pm(2l-1)$。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">l</th>
+<th align="center">m</th>
+<th align="center">轨道数量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$0(\text s)$</td>
+<td align="center">$0$</td>
+<td align="center">$1$</td>
+</tr>
+<tr>
+<td align="center">$1(\text p)$</td>
+<td align="center">$0,\pm 1$</td>
+<td align="center">$3$</td>
+</tr>
+<tr>
+<td align="center">$2(\text d)$</td>
+<td align="center">$0,\pm 1,\pm 3$</td>
+<td align="center">$5$</td>
+</tr>
+<tr>
+<td align="center">$3(\text f)$</td>
+<td align="center">$0,\pm 1,\pm 3,\pm 5$</td>
+<td align="center">$7$</td>
+</tr>
+</tbody></table>
+<h2 id="4-自旋量子数-m-s"><a href="#4-自旋量子数-m-s" class="headerlink" title="4 自旋量子数 $m_s$"></a>4 自旋量子数 $m_s$</h2><p>自旋量子数用于描述电子的旋转方向，取值为 $\pm \frac{1}{2}$。</p>
+<hr>
+<h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><ol>
+<li>写出与轨道量子数相符的轨道名称：</li>
+</ol>
+<ul>
+<li>$n&#x3D;3,l&#x3D;2,m&#x3D;1$</li>
+<li>$n&#x3D;4,l&#x3D;2,m&#x3D;0$</li>
+<li>$n&#x3D;1,l&#x3D;0,m&#x3D;0$</li>
+<li>$n&#x3D;2,l&#x3D;1,m&#x3D;-1$</li>
+</ul>
+<p>解：</p>
+<ul>
+<li>$l&#x3D;2$ 对应 $\text d$，为 $3 \text d$。</li>
+<li>$l&#x3D;2$ 对应 $\text d$，为 $4 \text d$。</li>
+<li>$l&#x3D;0$ 对应 $\text s$，为 $1 \text s$。</li>
+<li>$l&#x3D;1$ 对应 $\text p$，为 $2 \text p$。</li>
+</ul>
+<ol start="2">
+<li>判断哪些原子轨道不存在：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">$3 \text d$</td>
+<td align="center">$5 \text f$</td>
+<td align="center">$4 \text s$</td>
+</tr>
+<tr>
+<td align="center">$2 \text g$</td>
+<td align="center">$7 \text s$</td>
+<td align="center">$2 \text d$</td>
+</tr>
+</tbody></table>
+<p>解：$\text d,\text f,\text s,\text g,\text s,\text d$ 分别对应 $2,3,0,4,0,2$。由于 $4 \ge 2$ 且 $2 \ge 2$，因此 $2 \text g$ 和 $2 \text d$ 不存在。</p>
+<hr>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>$\text H$ 原子有 $2 \text s$ 轨道吗？</p>
+<p>答：有，因为任何一个原子都可以拥有无数个轨道（只要合法），但只有有限个轨道上有电子。</p>
+<hr>
+<!-- flag of hidden posts --></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/pic/icon.png" alt="shenyouran"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">shenyouran</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">1</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/shenyouran" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/shenyouran"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://github.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Github</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://www.luogu.com.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Luogu</span></span><span class="level-right"><span class="level-item tag">www.luogu.com.cn</span></span></a></li><li><a class="level is-mobile" href="https://codeforces.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Codeforces</span></span><span class="level-right"><span class="level-item tag">codeforces.com</span></span></a></li><li><a class="level is-mobile" href="http://loj.ac/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">LibreOJ</span></span><span class="level-right"><span class="level-item tag">loj.ac</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-30T16:00:00.000Z">2022-05-01</time></p><p class="title"><a href="/navigator/">Blog Navigator</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/BFS/"><span class="tag">BFS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSP/"><span class="tag">CSP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOI-Online/"><span class="tag">NOI Online</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOIP/"><span class="tag">NOIP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OI/"><span class="tag">OI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"><span class="tag">二分答案</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E5%BE%8B/"><span class="tag">元素周期律</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%86%E5%9D%97/"><span class="tag">分块</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/"><span class="tag">原子的构造原理</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><span class="tag">字符串</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%AE%E5%88%86/"><span class="tag">差分</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"><span class="tag">树状数组</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%8B%9F/"><span class="tag">模拟</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/"><span class="tag">欧拉计划</span><span class="tag">53</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B4%9B%E8%B0%B7/"><span class="tag">洛谷</span><span class="tag">5</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AD%9B%E6%B3%95/"><span class="tag">筛法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"><span class="tag">线段树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B4%AA%E5%BF%83/"><span class="tag">贪心</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%92%E5%BD%92/"><span class="tag">递归</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%98%9F%E5%88%97/"><span class="tag">队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E8%A7%A3/"><span class="tag">题解</span><span class="tag">6</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/pic/icon.png" alt="shenyouran&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 shenyouran</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/mhchem.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/unpacked/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
