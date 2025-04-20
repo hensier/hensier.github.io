@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>OI 2021 - hensier&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="hensier&#039;s Blog"><meta name="msapplication-TileImage" content="avatar.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="hensier&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="暑假集训$\text{2021.7.31} \sim \text{2021.8.5}$ 这 $6$ 天内完成了 $55$ 道题目，其中最常见的错误有：  审题不仔细导致程序写挂 数组开小导致运行错误 数组开大导致空间超限 $\text{DP}$ 边界设置错误 将 $\text{DP}$ 贪心化 不开 $\texttt{long long}$ 二分答案边界设置过小 常数因子过大影响程序效率"><meta property="og:type" content="blog"><meta property="og:title" content="OI 2021"><meta property="og:url" content="https://hensier.github.io/OI/OI2021/"><meta property="og:site_name" content="hensier&#039;s Blog"><meta property="og:description" content="暑假集训$\text{2021.7.31} \sim \text{2021.8.5}$ 这 $6$ 天内完成了 $55$ 道题目，其中最常见的错误有：  审题不仔细导致程序写挂 数组开小导致运行错误 数组开大导致空间超限 $\text{DP}$ 边界设置错误 将 $\text{DP}$ 贪心化 不开 $\texttt{long long}$ 二分答案边界设置过小 常数因子过大影响程序效率"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD1.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E5%A4%9C%E6%99%AF.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E8%A1%A8%E6%83%851.png"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%8D%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%B0%86%E5%86%9B%E8%B7%AF%E6%A0%A1%E5%8C%BA%EF%BC%89.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD2.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD3.JPG"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/%E8%A1%A8%E6%83%852.png"><meta property="og:image" content="https://hensier.github.io/OI/OI2021/NOIP%E6%88%90%E7%BB%A9%E5%8D%95.png"><meta property="article:published_time" content="2021-11-30T16:00:00.000Z"><meta property="article:modified_time" content="2023-01-02T03:26:06.000Z"><meta property="article:author" content="hensier"><meta property="article:tag" content="OI"><meta property="twitter:card" content="summary"><meta property="twitter:image:src" content="https://hensier.github.io/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD.JPG"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://hensier.github.io/OI/OI2021/"},"headline":"OI 2021","image":["https://hensier.github.io/OI/OI2021/%E8%A1%A8%E6%83%851.png","https://hensier.github.io/OI/OI2021/%E8%A1%A8%E6%83%852.png","https://hensier.github.io/OI/OI2021/NOIP%E6%88%90%E7%BB%A9%E5%8D%95.png"],"datePublished":"2021-11-30T16:00:00.000Z","dateModified":"2023-01-02T03:26:06.000Z","author":{"@type":"Person","name":"hensier"},"publisher":{"@type":"Organization","name":"hensier's Blog","logo":{"@type":"ImageObject","url":"https://hensier.github.io/OI/OI2021/avatar.png"}},"description":"暑假集训$\\text{2021.7.31} \\sim \\text{2021.8.5}$ 这 $6$ 天内完成了 $55$ 道题目，其中最常见的错误有：  审题不仔细导致程序写挂 数组开小导致运行错误 数组开大导致空间超限 $\\text{DP}$ 边界设置错误 将 $\\text{DP}$ 贪心化 不开 $\\texttt{long long}$ 二分答案边界设置过小 常数因子过大影响程序效率"}</script><link rel="canonical" href="https://hensier.github.io/OI/OI2021/"><link rel="icon" href="/avatar.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.0.0/css/all.css"><link data-pjax rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.7.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link data-pjax rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><meta name="msvalidate.01" content="75D9FC08E262722930FC5A05E693A65B"><script src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" defer></script><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+
+          const id = '#' + CSS.escape(location.hash.substring(1));
+          const $tabMenu = document.querySelector(`.tabs a[href="${id}"]`);
+          if (!$tabMenu) {
+            return;
+          }
+
+          const $tabMenuContainer = $tabMenu.parentElement.parentElement;
+          Array.from($tabMenuContainer.children).forEach($menu => $menu.classList.remove('is-active'));
+          Array.from($tabMenuContainer.querySelectorAll('a'))
+              .map($menu => document.getElementById($menu.getAttribute("href").substring(1)))
+              .forEach($content => $content.classList.add('is-hidden'));
+
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+          const $activeTab = document.querySelector(id);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.2.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/avatar.png" alt="hensier&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/tags">标签</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="My GitHub" href="https://github.com/hensier"><i class="fab fa-github"></i></a><a class="navbar-item" target="_blank" rel="noopener" title="My Luogu" href="https://www.luogu.com.cn/user/137367"><i class="/pic/luogu.ico"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2021-11-30T16:00:00.000Z" title="2021/12/1 00:00:00">2021-12-01</time>发表</span><span class="level-item"><time dateTime="2023-01-02T03:26:06.000Z" title="2023/1/2 11:26:06">2023-01-02</time>更新</span><span class="level-item">1 小时读完 (大约6837个字)</span><span class="level-item" id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv">0</span>次访问</span></div></div><h1 class="title is-3 is-size-4-mobile">OI 2021</h1><div class="content"><h2 id="暑假集训"><a href="#暑假集训" class="headerlink" title="暑假集训"></a>暑假集训</h2><p>$\text{2021.7.31} \sim \text{2021.8.5}$ 这 $6$ 天内完成了 $55$ 道题目，其中最常见的错误有：</p>
+<ul>
+<li>审题不仔细导致程序写挂</li>
+<li>数组开小导致运行错误</li>
+<li>数组开大导致空间超限</li>
+<li>$\text{DP}$ 边界设置错误</li>
+<li>将 $\text{DP}$ 贪心化</li>
+<li>不开 $\texttt{long long}$</li>
+<li>二分答案边界设置过小</li>
+<li>常数因子过大影响程序效率</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="常州集训-Week-1"><a href="#常州集训-Week-1" class="headerlink" title="常州集训 Week 1"></a>常州集训 Week 1</h2><p>经过多方面的努力，我们学校的 OIer 获得了前往常州一中集训的宝贵机会。</p>
+<h3 id="text-Day-1-2021-10-2"><a href="#text-Day-1-2021-10-2" class="headerlink" title="$\text{Day 1 2021.10.2}$"></a>$\text{Day 1 2021.10.2}$</h3><p><img src="/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD.JPG"></p>
+<p>第一次来常州一中，在无比激动的心情之下大致浏览了校园风貌，随即开始参加模拟赛。</p>
+<p>今天的 T1 是一个简单的贪心签到题，T2 是一个稍需一点技巧的贪心，T3 和 T4 都打了暴力。期望得分 $250+$。</p>
+<p>但出分之后发现 T2 全爆了，原来是在作乘法的时候没有加 $\texttt{1LL*}$……</p>
+<p>下午听了讲评和数据结构专题。</p>
+<h3 id="text-Day-2-2021-10-3"><a href="#text-Day-2-2021-10-3" class="headerlink" title="$\text{Day 2 2021.10.3}$"></a>$\text{Day 2 2021.10.3}$</h3><p>一整天的讲座。由于实力太弱<del>再加上主讲人平均五分钟口胡一道紫题难度以上的题目</del>，因而跟不上节奏而且听不懂大部分内容。只能勉强接受稍简单的部分。晚上结合自身情况刷了一些题目。</p>
+<h3 id="text-Day-3-2021-10-4"><a href="#text-Day-3-2021-10-4" class="headerlink" title="$\text{Day 3 2021.10.4}$"></a>$\text{Day 3 2021.10.4}$</h3><p>相比于昨天一整天的讲座，今天是一整天的模拟赛。</p>
+<p>上午的模拟赛：T1 是一个组合数学的签到题；T2 不会，直接骗分；T3 欲用 $\texttt{map}$ 配合容斥维护，但没有调出来。最终得分 $100+10+0&#x3D;110$。</p>
+<p>下午的模拟赛：T1 是一个细节较多的贪心；T2 是一个简单的 $\text{DP}$；T3 是一个较难的 $\text{DP}$，考场上找了 $2 \text h$ 的规律，但宣告失败。最终得分 $60+100+0&#x3D;160$。T1 因为细节没注意到位而挂掉，T3 交了记搜，但炸了。</p>
+<p>晚上把前一天的入门组题刷掉了，但有一道题还是调了十几分钟。看来真实水平暴露出来了啊。</p>
+<p>从今天的表现可以看出最近状态不太好，排名都是 $16&#x2F;36$，还需注意好细节。</p>
+<h3 id="text-Day-4-2021-10-5"><a href="#text-Day-4-2021-10-5" class="headerlink" title="$\text{Day 4 2021.10.5}$"></a>$\text{Day 4 2021.10.5}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 是一道贪心，但由于自己语文不好而没有拿到满分。</li>
+<li>T2 是一道数学题，赛时没有想出来，只能打暴力。该题在洛谷上评到了紫题难度，但实际上经过推算也不难做。</li>
+<li>T3 是一道随机化题，赛时打了一个用 $\texttt{map}$ 维护的暴力，本来可拿 $50$ 分。但由于细节再次注意不到位而爆零。</li>
+<li>T4 是一道难度中等的图论题，赛时由于 T2 考虑太久而没有写。</li>
+</ul>
+<p>本来得分可以是 $100+30+50+0&#x3D;180$ 的，但挂成了 $50+30+0+0&#x3D;80$，排名降到了 $25&#x2F;36$。</p>
+<p>下午主讲人进行了以「OI 中的数学问题」为题的讲座，内容包括最简单的快速幂、线性筛和较难的组合数、欧拉函数、费马小定理等。个人认为这次的内容至少还能够接受，不像前几天那么难，收获还是不小的。</p>
+<p>晚上按自己的思路把昨天上午的 T3 调过出去了，貌似方法和其他人都不大一样。具体是对每个字符串跑 $\text{DFS}$ 记录贡献，最后容斥计算答案。</p>
+<h3 id="text-Day-5-2021-10-6"><a href="#text-Day-5-2021-10-6" class="headerlink" title="$\text{Day 5 2021.10.6}$"></a>$\text{Day 5 2021.10.6}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 可以反向求最短路，考虑到边权为 $1$ 可以直接 $\text{BFS}$。考场上顺手打了 $\mathcal O(n \log n)$ 的 $\text{Dijkstra}$。本来认为 $n \le 10^7$ 可以通过，但程序常数较多，只拿了 $80$ 分。修改为 $\text{BFS}$ 后才可以拿满分。</li>
+<li>T2 一开始没看出解法，但到了考试最后半小时想出了贪心正解，即离散化后模拟取最大值。</li>
+<li>T3 看出来是一个扫描线，但自己不会打所以只能暴力。</li>
+<li>T4 没来得及做，实际上是一道「多合一」的题。</li>
+</ul>
+<p>T1 的失败也警示自己不要拘泥于一些经常打的算法，更不要看到题目就想当然。这次挂了 $20$，下次说不定就是 $100$。</p>
+<p>这次最终得分 $80+100+10+0&#x3D;190$，排名 $12&#x2F;38$。今天虽然排名有所上升，但依然有进步空间。</p>
+<p>下午讲评后，由于第二天要参加月考，因此四点多就出发回家了。</p>
+<p>临走前拍了校园内的一些照片和常州一中夜景：</p>
+<p><img src="/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD1.JPG"></p>
+<p><img src="/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E5%A4%9C%E6%99%AF.JPG"></p>
+<h2 id="CSP2021-复赛"><a href="#CSP2021-复赛" class="headerlink" title="CSP2021 复赛"></a>CSP2021 复赛</h2><h3 id="text-Day-inf"><a href="#text-Day-inf" class="headerlink" title="$\text{Day } -\inf$"></a>$\text{Day } -\inf$</h3><p>国庆常州集训回来之后立刻月考，年级排名 $150+$ <img src="/OI/OI2021/%E8%A1%A8%E6%83%851.png"></p>
+<h3 id="text-Day-1-2021-10-21"><a href="#text-Day-1-2021-10-21" class="headerlink" title="$\text{Day -1 2021.10.21}$"></a>$\text{Day -1 2021.10.21}$</h3><p>晚上在机房与老师一起观看领队会议。江苏新开发出了一个 JSOI Linux 收发系统。其优点是能在服务器上用最接近于评测的编译器进行编译运行，能有效避免 Windows 编译通过而实际 CE 的情况。缺点是评测较慢，但好在考试时可以不依赖它进行调试。</p>
+<h3 id="text-Day-0-2021-10-22"><a href="#text-Day-0-2021-10-22" class="headerlink" title="$\text{Day 0 2021.10.22}$"></a>$\text{Day 0 2021.10.22}$</h3><p><del>CSP 提高组考试前一天我居然才开始学习单调队列！！！</del></p>
+<h3 id="text-Day-1-2021-10-23"><a href="#text-Day-1-2021-10-23" class="headerlink" title="$\text{Day 1 2021.10.23}$"></a>$\text{Day 1 2021.10.23}$</h3><ul>
+<li>$\texttt{[7:25 - 11:00]}$ 学校周六正常上课，所以翘了课去机房刷题。先做了前几天洛谷比赛的一道橙题，然后又敲了一些板子来加深记忆。</li>
+<li>$\texttt{[11:00 - 14:00]}$ 出发前往南京航空航天大学将军路校区。在入场前膜拜了同校的大佬，希望可以增加一些 RP。</li>
+</ul>
+<p><img src="/OI/OI2021/%E5%8D%97%E4%BA%AC%E8%88%AA%E7%A9%BA%E8%88%AA%E5%A4%A9%E5%A4%A7%E5%AD%A6%EF%BC%88%E5%B0%86%E5%86%9B%E8%B7%AF%E6%A0%A1%E5%8C%BA%EF%BC%89.JPG"></p>
+<ul>
+<li><p>$\texttt{[14:00 - 14:30]}$ 调试过程中先敲了快读。虽然前几次都没有考到，但我还是打算打一下线段树（<del>事实证明这次确实考了</del>），随后打了最短路、最小生成树之类的。同时熟悉一下新的收发系统。</p>
+</li>
+<li><p>$\texttt{[14:30 - 14:35]}$ 大致浏览了一下题面。第一眼感觉 T1 像一个二分答案；T2 数据范围较小，但可能不太好做，貌似暴力好写一些；T3 爆搜实现不难，可先骗取一定分数；T4 细节多，估计暴力都难打。决定开题顺序为  $1 \to 3 \to 2 \to 4$。</p>
+</li>
+<li><p>$\texttt{[14:35 - 17:00] T1}$</p>
+<ul>
+<li>$\texttt{[14:35 - 15:00]}$ 开始考虑 T1 的做法。由于浏览题面时感觉可以用二分答案，因此这个实际上错误的思路束缚了我很久。后来发现有国内国际两种航班，虽然单独考虑存在单调性，但同时考虑则失去了二分所必需的性质，也证明了二分实际上不可行。</li>
+<li>$\texttt{[15:00 - 15:15]}$ 本来以为想到了正解但未遂，这在考场上对自己的心理影响无疑是巨大的。为了有效减小这种负面影响，我决定先打暴力。瞄了一眼题面，发现可以先离散化所有时刻，然后再按时刻从小到大排序所有航班信息。接着外层枚举国内&#x2F;国际分配到的廊桥数量，内层扫一遍排序后的航班信息统计答案即可。若 $n,m_1,m_2$ 同阶，这样的复杂度是 $\mathcal O(n^2)$，可以先保证把 $40$ 分拿在手里。调了一会儿之后便过了所有样例和大样例。</li>
+<li>$\texttt{[15:15 - 17:00]}$ 打完暴力之后设法考虑是否能优化。经过一个小时在草稿纸上的思考之后，发现无法找到更简单的方法。于是就把暴力代码打开，把中间计数器输出，猛然发现计数器大小是单调不递减的！因此想到了可以二分并线段树维护，可以将平方优化为 $\log$。怒码 3KB 后过了样例、大样例。但提交了无暴力的程序，事后想想也是十分惊险。</li>
+</ul>
+</li>
+<li><p>$\texttt{[17:00 - 17:15] T3}$ 对于暴力，可以用 $\texttt{vector}$ 维护当前状态，然后 $\text{DFS}$。但写完后过不了大样例，于是静态查错了半天，没有发现问题，因此决定先开 T2。</p>
+</li>
+<li><p>$\texttt{[17:15 - 18:00] T2}$ 看起来可以搜索，但打到一半发现很难判断当前字符串是否合法。考虑了一会儿发现想不出合适之法，就打了一个乱搞。</p>
+</li>
+<li><p>$\texttt{[18:00 - 18:15] T4}$ 发现可以状压，复杂度为 $\mathcal O(2^{nm})$，可得 $10$ 分。<del>但写完后又过不了大样例！！！</del></p>
+</li>
+<li><p>$\texttt{[18:15 - 18:25] T3}$ 看能不能逆天改命，把 T3 调出来，最终失败了。</p>
+</li>
+<li><p>$\texttt{[18:25 - 18:30]}$ 检查所有程序，防止出错。期望得分 $100+0+0+0&#x3D;100$，<del>同时幻想弱数据可以让自己多拿几分</del>。</p>
+</li>
+<li><p>$\texttt{[18:30 - 19:00]}$ 考试结束后认真聆听旁边的人的交谈，听到了网络流，看来自己会的真的太少了。</p>
+</li>
+<li><p>$\texttt{[19:00 - 20:30]}$ 在车上与同校大佬交谈，发现他们 T1 也用的是线段树，但思路与我完全不一样。考虑到后面三题都可能爆掉，因此感觉自己可能没戏了，于是干脆闭目养神。</p>
+</li>
+<li><p>$\texttt{[21:30 - 22:00]}$ 在洛谷和 InfOJ 等 OJ 估分，发现 T1 好像能 A，但其它三题一分都没有。</p>
+</li>
+</ul>
+<h3 id="text-Day-2-2021-10-24"><a href="#text-Day-2-2021-10-24" class="headerlink" title="$\text{Day 2 2021.10.24}$"></a>$\text{Day 2 2021.10.24}$</h3><p>早上起床后觉得这次 T1 真的有惊无险，决定在洛谷上写个题解整理一下思路。下午看新闻发现南航发生了一起严重的爆炸事故。想起前一天刚在那里考试，不禁思绪万千。</p>
+<h3 id="text-Day-8-2021-10-30"><a href="#text-Day-8-2021-10-30" class="headerlink" title="$\text{Day 8 2021.10.30}$"></a>$\text{Day 8 2021.10.30}$</h3><p>在常州一中参加信息集训，晚上通知说 CSP 成绩出来了。查了一下发现真的只有 $100$。</p>
+<h3 id="text-Day-14-2021-11-5"><a href="#text-Day-14-2021-11-5" class="headerlink" title="$\text{Day 14 2021.11.5}$"></a>$\text{Day 14 2021.11.5}$</h3><p>认证名单出来了，分数线只有 $120$。其实只要再稍微努力一下就有国一。这次只能 2&#x3D; 滚粗了。</p>
+<h3 id="CSP-总结"><a href="#CSP-总结" class="headerlink" title="CSP 总结"></a>CSP 总结</h3><p>从去年和今年的 CSP 来看，T1 的难度往往不是最简单的——事实证明去年 T2 和今年的 T3 都稍容易一些。因此在考场上要明确开题顺序，果断作出要考虑正解还是打暴力的选择。但最重要的还是要提升自身实力，多学习一些实用算法，避免在考前一天还在学习基础算法。</p>
+<h2 id="常州集训-Week-2"><a href="#常州集训-Week-2" class="headerlink" title="常州集训 Week 2"></a>常州集训 Week 2</h2><p>这周继续前往常州一中集训。</p>
+<h3 id="text-Day-1-2021-10-30"><a href="#text-Day-1-2021-10-30" class="headerlink" title="$\text{Day 1 2021.10.30}$"></a>$\text{Day 1 2021.10.30}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 反向 $\text{DFS}$，途中标记即可。</li>
+<li>T2 打了暴力。</li>
+<li>T3 貌似跟图论毫无关系，用二分答案过了。</li>
+<li>T4 是一道差分约束题目，用暴力拿了 $10$ 分。</li>
+</ul>
+<p>最终得分 $100+20+100+10&#x3D;230$，排名 $15&#x2F;27$。</p>
+<p>下午讲评时，主讲人说 T3 本来是用 $\text{SPFA}$ 过的，但实际上二分答案效率更高。讲评后主讲人进行了图论专场讲座，为我们普及图论相关知识。</p>
+<p>晚上练习时自学了模拟赛 T2 的二分图和 T4 的差分约束。</p>
+<h3 id="text-Day-2-2021-10-31"><a href="#text-Day-2-2021-10-31" class="headerlink" title="$\text{Day 2 2021.10.31}$"></a>$\text{Day 2 2021.10.31}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 是一道数学题但没想到正解，暴力骗了 $60$。</li>
+<li>T2 是一道组合数学，但依然没有看出来，只能打暴力。</li>
+<li>T3 没来得及做，程序里只输出了一串 $-1$。</li>
+</ul>
+<p>最终得分 $60+40+10&#x3D;110$，排名 $14&#x2F;26$，并不算很好。</p>
+<p>下午讲评才发现 T1 如此简单。而 T3 题目名为 $\texttt{kal}$，实际上考的是 $\text{Kruskal}$，只要配合并查集即可轻松过题。讲评结束后就回家了。</p>
+<p>拍照留念：</p>
+<p><img src="/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD2.JPG"></p>
+<p><img src="/OI/OI2021/%E5%B8%B8%E5%B7%9E%E4%B8%80%E4%B8%AD%E6%A0%A1%E5%9B%AD3.JPG"></p>
+<h3 id="text-Day-3-2021-11-1"><a href="#text-Day-3-2021-11-1" class="headerlink" title="$\text{Day 3 2021.11.1}$"></a>$\text{Day 3 2021.11.1}$</h3><p>在同校大佬的指点下，写了一个效率更高矩阵快速幂，甚至可以把数据范围从 $200000$ 开到 $10^{18}$ 以上。这也说明了 std 也不一定是最优解。</p>
+<h3 id="text-Day-4-2021-11-2"><a href="#text-Day-4-2021-11-2" class="headerlink" title="$\text{Day 4 2021.11.2}$"></a>$\text{Day 4 2021.11.2}$</h3><p>在离开常州后的几天之后，常州出现了确诊病例。幸亏没有受到影响。</p>
+<h2 id="常州集训-Week-3"><a href="#常州集训-Week-3" class="headerlink" title="常州集训 Week 3"></a>常州集训 Week 3</h2><p>由于疫情，这几周都在学校通过线上形式集训，还邀请了扬州中学、华罗庚中学的同学参加。</p>
+<h3 id="text-Day-1-2021-11-6"><a href="#text-Day-1-2021-11-6" class="headerlink" title="$\text{Day 1 2021.11.6}$"></a>$\text{Day 1 2021.11.6}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 其实做法很显然，但赛时又没有想到。赛时对 $1 \sim 5$ 和 $6 \sim 7$ 测试点进行判断，实际上可得  $70$ 分。但由于数据较水，实际上拿了 $80$。</li>
+<li>T2 是一道莫队，但赛时并不会，就用 $\texttt{vector}$ 配合 $\texttt{lower_bound}$ 进行暴力。但该题数据依然很水，拿了 $80$。</li>
+<li>T3 打了 $60$ 的暴力。</li>
+<li>T4 打的是 $30$ 的暴力，但挂成了 $10$ 分。</li>
+</ul>
+<p>最终得分 $80+80+60+10&#x3D;230$，排名 $10&#x2F;45$。由于数据较水相对前几次还是不错的。</p>
+<p>下午讲评后进行 $\text{DP}$ 专题，包括对 $\text{DP}$ 的若干优化。结束之后回家进行了一些练习，学习了莫队算法。</p>
+<h3 id="text-Day-2-2021-11-7"><a href="#text-Day-2-2021-11-7" class="headerlink" title="$\text{Day 2 2021.11.7}$"></a>$\text{Day 2 2021.11.7}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 是一道数学题，没能想出来。</li>
+<li>T2 是一道单调队列，但调炸了。</li>
+<li>T3 和 T4 直接上暴力了。</li>
+</ul>
+<p>最终得分只有 $0+0+10+0&#x3D;10$，排名 $33&#x2F;44$。可以见得状态非常糟糕，一道简单的单调队列居然炸成 $0$ 分。</p>
+<p>下午讲评了各题做法，实际上 T1 的做法用到了 NOIP T2 上。讲评之后没有进行讲座，留了时间自主练习。</p>
+<h2 id="常州集训-Week-4"><a href="#常州集训-Week-4" class="headerlink" title="常州集训 Week 4"></a>常州集训 Week 4</h2><p>这周依然在学校进行。</p>
+<h3 id="text-Day-1-2021-11-13"><a href="#text-Day-1-2021-11-13" class="headerlink" title="$\text{Day 1 2021.11.13}$"></a>$\text{Day 1 2021.11.13}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 是一道二分答案，但赛时只打了 $50$ 的暴力。</li>
+<li>T2 通过打表发现与斐波那契数列有关，但没有找到规律。因此只打了 $40$ 的暴力。</li>
+<li>T3 没有理解题意，再加上时间紧张，没有拿到分。</li>
+<li>T4 通过朴素暴力可得 $60$。</li>
+</ul>
+<p>最终得分 $50+40+0+60&#x3D;150$，排名 $12&#x2F;42$。</p>
+<p>下午讲评发现 T2 可以直接递归求解。之后进行「数论简谈」、「凸壳」、「线性数据结构基础」三个专题讲座。</p>
+<h3 id="text-Day-2-2021-11-14"><a href="#text-Day-2-2021-11-14" class="headerlink" title="$\text{Day 2 2021.11.14}$"></a>$\text{Day 2 2021.11.14}$</h3><p>上午进行模拟赛：</p>
+<ul>
+<li>T1 是一道 $\mathcal O(nk)$ 的 $\text{DP}$。</li>
+<li>T2 看起来就是背包，但居然没有调出来。</li>
+<li>T3 和 T4 都打了暴力。</li>
+</ul>
+<p>最终得分 $100+30+70+20&#x3D;220$，排名 $20&#x2F;41$。</p>
+<p>下午没有进行讲评和讲座，于是把 T2 和 T3 正解调过去了。</p>
+<h2 id="NOIP-2021"><a href="#NOIP-2021" class="headerlink" title="NOIP 2021"></a>NOIP 2021</h2><h3 id="text-Day-inf-1"><a href="#text-Day-inf-1" class="headerlink" title="$\text{Day } -\inf$"></a>$\text{Day } -\inf$</h3><p>这段时间继续参加模拟赛。考前新学了莫队、$\text{Tarjan}$ 算法，复习了拓扑排序、线段树、$\text{Dijkstra}$ 等。</p>
+<h3 id="text-Day-16-2021-11-3"><a href="#text-Day-16-2021-11-3" class="headerlink" title="$\text{Day -16 2021.11.3}$"></a>$\text{Day -16 2021.11.3}$</h3><p>收到通知，获得参加 NOIP 的资格，那就赶快准备起来。</p>
+<h3 id="text-Day-0-2021-11-19"><a href="#text-Day-0-2021-11-19" class="headerlink" title="$\text{Day 0 2021.11.19}$"></a>$\text{Day 0 2021.11.19}$</h3><p>比赛地点在金陵中学河西分校。由于早上比赛，因此入住酒店。与 CSP 相似，这天晚上受教，打了 $\text{KMP}$ 的板子，但实际上并没有理解，很快就忘记了。所以干脆去打其它的。</p>
+<h3 id="text-Day-1-2021-11-20"><a href="#text-Day-1-2021-11-20" class="headerlink" title="$\text{Day 1 2021.11.20}$"></a>$\text{Day 1 2021.11.20}$</h3><ul>
+<li>$\texttt{[7:00 - 7:45]}$ 在考场建筑「创想空间」外排队，想起了 NOIP 是最关键的一战，心里无比紧张，但还是尽全力尝试平复心情。</li>
+<li>$\texttt{[7:50 - 8:30]}$ 敲了一些可能用到的板子。</li>
+<li>$\texttt{[8:30 - 8:35]}$ 浏览题面。发现 T1 是一个纯询问且每次询问只有一个的题，又因为数据范围不小，感觉需要一定的预处理。T2 和 T3 一看像数学题，可能存在一些有用的结论。T4 跟 CSP T4 的题面都很长，估计短时间无法突破。确定开题顺序为 $1 \to 2 \to 3 \to 4$。</li>
+<li>$\texttt{[8:35 - 10:30] T1}$<ul>
+<li>$\texttt{[8:35 - 9:00]}$ 先打了最原始的 $\mathcal O(N^2 \lg N)$ 预处理暴力，可以通过小一些的样例。</li>
+<li>$\texttt{[9:00 - 10:30]}$ 进行一系列的优化。先是发现了不符合的整数没必要继续跑循环，优化后大样例跑了大约 $4$ 秒，还需进一步修改。随后发现只要被标记了就无需继续覆盖，因为后面的肯定已经覆盖完了，这样之后大样例所需时间为 $1.004$ 秒。于是考虑卡常，把快读全部换成 $\texttt{fread}$ 读入，时间降到 $0.6$ 秒。加了快写之后优化到 $0.4$ 秒。虽然复杂度不好证明，但优化后感觉应该不会有什么问题，就先交到收发系统里去了。</li>
+</ul>
+</li>
+<li>$\texttt{[10:30 - 11:00] T2}$ 先打暴力 $\text{DFS}$，能过测试点 $1 \sim 4$，$20$ 到手。后来想搜索有很多重复状态，联想到了 $11$ 月 $7$ 日模拟赛的 T1，通过数学手段进行了一定的优化。测试点 $14 \sim 15$ 的规模大约跑了 $2$ 秒左右，运气好是可以通过的。</li>
+<li>$\texttt{[11:00 - 11:30] T3}$ 先写了一个 $\mathcal O(1)$ 求方差和修改方差值的函数备用。接着写了 $\text{DFS}$，用 $\texttt{map}$ 和 $\texttt{vector}$ 维护当前序列是否已经访问过，然后直接爆搜。想了一下之后发现测试点 $1 \sim 3$ 能过，至少有 $15$。</li>
+<li>$\texttt{[11:30 - 12:30] T4}$ 暴力调了一个小时过不了任何样例，决定不管了。</li>
+<li>$\texttt{[12:30 - 12:50] T3}$ 发现 $n \gt 4$ 的情况运行时间都很长，于是干脆对 $n \gt 4$ 的情况乱搞。具体就是对于每次拓展选择修改后方差值最小的继续拓展，有点贪心的特点，但错误性也是显然的——过不了下发的样例。但与其等着暴力代码超时，还不如对拿不了的分的部分打一个乱搞，同时幻想能多骗一些分。</li>
+<li>$\texttt{[12:50 - 13:00]}$ 检查所有程序，防止出错。期望得分 $100+[20,30]+[12,?]+0&#x3D;[132,?]$。</li>
+<li>$\texttt{[13:00 - 15:40]}$ 回到酒店吃饭，然后上车返程。期间与同校大佬讨论了 T1 的做法，发现就是类埃氏筛。而 T2 可以打 $60$ 的状压而自己没有看出来！！！</li>
+<li>$\texttt{[15:40 - 16:30]}$ 回到学校之后周六课程还未结束，在备用教室中等待。测了一下洛谷民间数据，T1、T2 得分分别为 $100,30$，符合预期。</li>
+<li>$\texttt{[18:00 - 20:00]}$ 到各个 OJ 测民间数据，其中大部分是 $100+30+28+0&#x3D;158$，但甚至有一个高达 $100+30+52+0&#x3D;182$。貌似 T3 乱搞居然能拿分？！</li>
+</ul>
+<h3 id="text-Day-2-2021-11-21"><a href="#text-Day-2-2021-11-21" class="headerlink" title="$\text{Day 2 2021.11.21}$"></a>$\text{Day 2 2021.11.21}$</h3><p>发现 T1 做法不严谨，直接取所有询问的最大值加了 $1000$ 作为类埃氏筛的最大值，但实际上可以轻松被 $2 \times 10^5$ 个询问值为 $7 \times 10^6-2$ 的数据卡掉。虽然好几处 OJ 都没有出现这种数据，但最坏可以直接 $100 \to 50$。</p>
+<p>莫名联想到：</p>
+<blockquote>
+<p>2018 年 7 月 19 日，某位同学在 <a target="_blank" rel="noopener" href="https://www.luogu.org/problemnew/show/P4768">NOI Day 1 T1 归程</a> 一题里非常熟练地使用了一个广为人知的算法求最短路。<br>然后呢？<br>$100 \rightarrow 60$；<br>$\text{Ag} \rightarrow \text{Cu}$；<br>最终，他因此没能与理想的大学达成契约。<br>小 F 衷心祝愿大家不再重蹈覆辙。</p>
+</blockquote>
+<p>虽然这并不是 NOI 这么重要的赛事，被卡的概率也不是很大，但一旦分数降到 $50$，后果也是很严重的。这也提醒自己无论是否在 OI 中，都要注意细节。</p>
+<h3 id="text-Day-10-2021-11-29"><a href="#text-Day-10-2021-11-29" class="headerlink" title="$\text{Day 10 2021.11.29}$"></a>$\text{Day 10 2021.11.29}$</h3><p>期中考试成绩出来了，成绩甚至比月考还要不堪入目 <img src="/OI/OI2021/%E8%A1%A8%E6%83%852.png"></p>
+<p>看来竞赛真的会让文化课成绩上下波动，搞竞赛的风险也很大，但为了 OI 还是值得的。</p>
+<p>晚上回家后发现官方成绩也出来了：</p>
+<p><img src="/OI/OI2021/NOIP%E6%88%90%E7%BB%A9%E5%8D%95.png"></p>
+<p>看来运气真的不错——T1 没有被卡，T3 的乱搞还有这么多分。</p>
+<h3 id="text-Day-14-2021-12-3"><a href="#text-Day-14-2021-12-3" class="headerlink" title="$\text{Day 14 2021.12.3}$"></a>$\text{Day 14 2021.12.3}$</h3><p>获奖名单出炉。基准线是 $140$，江苏国一分数线是 $150$，这次终于拿到了国一。这也应该算是自己 AFO 的标志了。下面一定要好好忙文化课，把前面落下的尽快补上去。</p>
+<h2 id="竞赛生涯总结"><a href="#竞赛生涯总结" class="headerlink" title="竞赛生涯总结"></a>竞赛生涯总结</h2><p>这几个月的信息竞赛虽然给我的学业带来了巨大的压力，但实际上也让我收获了很多。</p>
+<p>虽说在五大学科竞赛中，信息可能算得上是与高考关系最小的一门，但它实际上教给了我很多可以适用于平时学习中的经验。从这次竞赛来看，往往题目都很难彻底解决，但有部分分可以获得。与其绞尽脑汁思考一道题目的正解，不如想办法多拿一些分数或者利用剩余时间去检查错误。再者，信息竞赛让我深刻地认识到了细节决定成败的道理。理科试卷中在细节上犯错往往会错掉整个大题；而信息竞赛中一旦出错，可能会白白失去几十分甚至一题从 $100$ 分掉到 $0$ 分。</p>
+<p>参加信息竞赛源于我个人的兴趣。我从小学开始接触 JavaScript，学会了如何制作最简单的动画程序。虽然这在现在看来简直微不足道，但实际上培养了我对编程的兴趣。进入初中，我在初一和初二甚至连普及组复赛都没有资格参加。在面临选择是否继续的关头，我还是决定坚持下来。到了初三，我利用几乎整个国庆的时间着手准备初赛，最终才得以进入复赛。复赛中我如愿以偿，获得了普及组一等奖和提高组二等奖。</p>
+<p>到了高中阶段，学业更为紧张，竞赛的功利性也更强。从暑假开始，马老师就带领我们大量做题。高中的竞赛相比于之前的一大区别是有了与高手交流的机会。有一个优秀的交流伙伴，既能分享心得体会、交流解题方法，又能相互竞争、共同进步。在这样的环境之下，我成功地进入了 CSP 提高组的复赛，获得了后续的参赛资格。CSP 的复赛我只拿到了二等奖。虽然 CSP 成绩并没有 NOIP 联赛含金量高，但每个机会都要尽可能把握住。</p>
+<p>信息竞赛知识的积累可以视为制作珍珠项链的过程——通过做题探索并学习新的算法，从而不断完善知识体系。在准备联赛的过程中，马老师多次带我们去常州一中集训，也不辞劳苦地陪伴我们在学校机房做模拟题。集训和平时模拟中难免会有题目考查自己掌握不牢或完全生疏的内容，而这些题目不仅有助于引出新的知识和算法，而且比单纯学习给人带来的印象更为深刻。同时，集训过程中的交流机会也变得更多。我与同校高手进行交流之后深深感受到了巨大的差距。在认识他人和认识自己的过程中，我更加明确了自己的不足。</p>
+<p>在这样的自我提升之下，我怀着紧张的心情，踏入了 NOIP 联赛的考场。这次相比于 CSP 复赛的 $4$ 个小时，多了 $30$ 分钟的考试时间。我决定先利用前一个小时的时间把第一题做完。第一题难度不是很大，于是在思路明朗之后就进入了下一题。第二题自己没想出正解，但进行了合理的“骗分”。值得一提的是，这道题的思想在联赛前一个月的模拟赛中曾经出现过。当时那题自己没有做对，从而导致印象深刻。以至于到了赛时，那道题立马从我的脑海中浮现出来了，让我从原来的 $20$ 分提高到了 $30$。第三题仍然采取写“暴力”程序“骗分”的做法，期望得分是 $12$ 。第四题本来可以通过“暴力”拿到 $24$ 分，但没能成功。这时我作出放弃第四题而完善第三题的决定，通过随机的手段多拿了一些分数。最终得分是第一题 $100$ 分，第二题 $30$ 分，第三题 $40$ 分，第四题 $0$ 分，共 $170$ 分，超过了国一线。拿到国一这个奖项，其实并不完全在于自己对知识和算法精通的掌握。考试技巧的合理运用也尤为关键。正如马老师所说，只要把会做的题目做对，再“骗取”一些分数，就离国一不远了。当然，客观来说，这样的策略是有很大的运气成分的。真正想有稳定的成绩，还要增强自身实力。但是在思路实在无法打开的情况下，进行一些合理的尝试也是可取的。就像前面所说，这一点在很多其它场景中也是适用的。</p>
+<p>一等奖对于很多竞赛生来说绝对算不上是终点——他们有着冲省队、争金夺银的宏大理想。拿到一等奖也绝不等同于已经在这一方面有了很深的理解和认识。考虑到自身实力的不足和高中学业的紧张，大概我的信息竞赛生涯就要到此结束了。这段时间里，我想感谢始终鼓励自己的父母、辛勤付出的马老师和学校的大力支持。一起参与竞赛的校友也一直陪伴着我。他们既是我的知心朋友，又是我的潜在竞争者。没有了他们的帮助，我绝对不可能把这一兴趣坚持到现在。</p>
+<p>希望自己能把耽误的功课尽快补上去，在后续的高中生活中取得更大的进步。同时衷心祝愿一中的各科竞赛在未来取得更为丰硕的成果。</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>OI 2021</p><p><a href="https://hensier.github.io/OI/OI2021/">https://hensier.github.io/OI/OI2021/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>hensier</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2021-12-01</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-01-02</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/OI/">OI</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/chemistry/1%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/arbital/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">原子轨道</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/OI/P7960/"><span class="level-item">P7960 [NOIP2021] 报数 题解</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div class="content" id="valine-thread"></div><script src="//cdn.jsdelivr.net/npm/leancloud-storage@3/dist/av-min.js"></script><script src="https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js"></script><script>new Valine({
+            el: '#valine-thread',
+            appId: "EW1yQbV1WS3IL2aSdwpLtRzm-MdYXbMMI",
+            appKey: "9iKsEk411K8XD4hEC1kwxsbF",
+            
+            avatar: "mm",
+            avatarForce: false,
+            meta: ["nick","mail","link"],
+            pageSize: 10,
+            lang: "zh-CN",
+            visitor: false,
+            highlight: true,
+            recordIP: false,
+            
+            
+            
+            enableQQ: false,
+            requiredFields: [],
+        });</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/avatar.png" alt="hensier"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">hensier</p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">71</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">23</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/hensier" target="_blank" rel="me noopener">关注我</a></div><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="me noopener" title="Github" href="https://github.com/hensier"><i class="fab fa-github"></i></a></div></div></div><!--!--><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://hensier.github.io/springfestival/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">自制新春烟火发射器</span></span><span class="level-right"><span class="level-item tag">hensier.github.io</span></span></a></li><li><a class="level is-mobile" href="https://github.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitHub</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li><li><a class="level is-mobile" href="https://www.luogu.com.cn/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">洛谷</span></span><span class="level-right"><span class="level-item tag">www.luogu.com.cn</span></span></a></li><li><a class="level is-mobile" href="https://codeforces.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">Codeforces</span></span><span class="level-right"><span class="level-item tag">codeforces.com</span></span></a></li></ul></div></div></div><!--!--><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2025-02-18T03:34:18.000Z">2025-02-18</time></p><p class="title"><a href="/Attention%20Is%20All%20You%20Need/">Attention Is All You Need</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2024-11-30T10:42:00.000Z">2024-11-30</time></p><p class="title"><a href="/OI/P11362/">P11362 [NOIP2024] 遗失的赋值 题解</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-06-09T03:37:00.000Z">2022-06-09</time></p><p class="title"><a href="/math/NEMT/2022/newI/">2022 新高考 I 卷精选好题</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-22T09:27:27.000Z">2022-05-22</time></p><p class="title"><a href="/projecteuler/52/">【欧拉计划】52. Permuted multiples</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-05-08T02:40:11.000Z">2022-05-08</time></p><p class="title"><a href="/projecteuler/51/">【欧拉计划】51. Prime digit replacements</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2025/02/"><span class="level-start"><span class="level-item">二月 2025</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2024/11/"><span class="level-start"><span class="level-item">十一月 2024</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/06/"><span class="level-start"><span class="level-item">六月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/05/"><span class="level-start"><span class="level-item">五月 2022</span></span><span class="level-end"><span class="level-item tag">55</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/03/"><span class="level-start"><span class="level-item">三月 2022</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/12/"><span class="level-start"><span class="level-item">十二月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/11/"><span class="level-start"><span class="level-item">十一月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/10/"><span class="level-start"><span class="level-item">十月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/10/"><span class="level-start"><span class="level-item">十月 2020</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2020/05/"><span class="level-start"><span class="level-item">五月 2020</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/BFS/"><span class="tag">BFS</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CSP/"><span class="tag">CSP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOI-Online/"><span class="tag">NOI Online</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/NOIP/"><span class="tag">NOIP</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OI/"><span class="tag">OI</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"><span class="tag">二分答案</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%85%83%E7%B4%A0%E5%91%A8%E6%9C%9F%E5%BE%8B/"><span class="tag">元素周期律</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%88%86%E5%9D%97/"><span class="tag">分块</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8E%9F%E5%AD%90%E7%9A%84%E6%9E%84%E9%80%A0%E5%8E%9F%E7%90%86/"><span class="tag">原子的构造原理</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"><span class="tag">字符串</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%B7%AE%E5%88%86/"><span class="tag">差分</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%90%9C%E7%B4%A2/"><span class="tag">搜索</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%95%B0%E5%AD%A6/"><span class="tag">数学</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84/"><span class="tag">树状数组</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A8%A1%E6%8B%9F/"><span class="tag">模拟</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%AC%A7%E6%8B%89%E8%AE%A1%E5%88%92/"><span class="tag">欧拉计划</span><span class="tag">53</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%B4%9B%E8%B0%B7/"><span class="tag">洛谷</span><span class="tag">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%AD%9B%E6%B3%95/"><span class="tag">筛法</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/"><span class="tag">线段树</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B4%AA%E5%BF%83/"><span class="tag">贪心</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%80%92%E5%BD%92/"><span class="tag">递归</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%98%9F%E5%88%97/"><span class="tag">队列</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%A2%98%E8%A7%A3/"><span class="tag">题解</span><span class="tag">7</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/avatar.png" alt="hensier&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2025 hensier</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a><br><span id="busuanzi_container_site_uv">共<span id="busuanzi_value_site_uv">0</span>个访客</span></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-cn");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script data-pjax src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script data-pjax src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.10.0/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.8.1/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/auto-render.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/contrib/mhchem.min.js" defer></script><script>window.addEventListener("load", function() {
+            document.querySelectorAll('[role="article"] > .content').forEach(function(element) {
+                renderMathInElement(element);
+            });
+        });</script><script type="text/javascript" id="MathJax-script" async>MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+      },
+      svg: {
+        fontCache: 'global'
+      },
+      chtml: {
+        matchFontHeight: false
+      }
+    };</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script><!--!--><!--!--><!--!--><script data-pjax src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
